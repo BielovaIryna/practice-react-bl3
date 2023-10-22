@@ -1,9 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class WordsListItem extends Component {
   render() {
-	return (
-	  <div>WordsListItem</div>
-	)
+    const { ukWord, enWord } = this.props.word;
+
+    return (
+      <li>
+        <span>{ukWord}</span>
+        <br />
+        <span>{enWord}</span>
+        <button type="button" onClick={this.props.handleDelete}>
+          Delete
+        </button>
+      </li>
+    );
   }
 }

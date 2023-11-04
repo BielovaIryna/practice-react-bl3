@@ -15,6 +15,10 @@ export class App extends Component {
     });
   };
 
+  increaseNumber = () => {
+    this.setState(prevState => ({ number: prevState.number + 1 }));
+  };
+
   handleDelete = wordId => {
     this.setState(prevState => ({
       words: prevState.words.filter(word => word.id !== wordId),

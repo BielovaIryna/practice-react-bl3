@@ -5,14 +5,22 @@ export default class WordsListItem extends Component {
     const { ukWord, enWord } = this.props.word;
 
     return (
-      <li>
-        <span>{ukWord}</span>
-        <br />
-        <span>{enWord}</span>
-        <button type="button" onClick={this.props.handleDelete}>
-          Delete
-        </button>
-      </li>
+      <tr>
+        <td>
+          <input type="checkbox" name="selectAll" />
+        </td>
+        <td>#{}</td>
+        <td>{enWord}</td>
+        <td>{ukWord}</td>
+        <td>
+          <button type="button" onClick={this.props.handleDelete}>
+            Delete
+          </button>
+        </td>
+        <td>
+          <button type="button">Edit</button>
+        </td>
+      </tr>
     );
   }
 }

@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import React, { Component } from 'react';
+import css from './WordsForm.module.css';
 
 export default class WordsForm extends Component {
   state = {
@@ -16,29 +17,30 @@ export default class WordsForm extends Component {
   };
   render() {
     return (
-      <form action="" className="words-form" onSubmit={this.handleSubmit}>
-        <label htmlFor="" className="en-word">
+      <form action="" className={css.wordsForm} onSubmit={this.handleSubmit}>
+        <label htmlFor="" className={css.enWord}>
           {' '}
-          UK
           <input
             onChange={this.handleChange}
             name="ukWord"
             type="text"
-            className="en-word-input"
+            className={css.enWordInput}
+            placeholder="Ukrainian word"
             required
           />
         </label>
-        EN
-        <label htmlFor="" className="en-word">
+
+        <label htmlFor="" className={css.enWord}>
           <input
             onChange={this.handleChange}
             name="enWord"
             type="text"
-            className="en-word-input"
+            className={css.enWordInput}
+            placeholder="English word"
           />
         </label>
-        <button type="submit" className="submit-button">
-          Submit
+        <button type="submit" className={css.submitButton}>
+          ADD WORD
         </button>
       </form>
     );

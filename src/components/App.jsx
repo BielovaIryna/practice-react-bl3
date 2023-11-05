@@ -28,6 +28,22 @@ export class App extends Component {
     }));
   };
 
+  handleInputChange = e => {
+    this.setState({ filter: e.target.value });
+  };
+
+  searchWord = () => {
+    let searchWords = [];
+    if (this.state.filter) {
+      searchWords = this.state.words.filter(word =>
+        word.enWord.toLowerCase().includes(this.state.filter.toLowerCase())
+      );
+    } else {
+      searchWords = this.state.words;
+    }
+    return searchWords;
+  };
+
   render() {
     return (
       <div>
@@ -35,9 +51,13 @@ export class App extends Component {
           handleAddWord={this.handleAddWord}
           increaseNumberComponent={this.increaseNumberComponent}
         />
-        <WordsFilter />
+        <WordsFilter
+          filter={this.state.filter}
+          handleInputChange={this.handleInputChange}
+        />
         <WordsList
-          words={this.state.words}
+          // words={this.state.words}
+          words={this.searchWord()}
           numberComponent={this.state.numberComponent}
           handleDelete={this.handleDelete}
         />

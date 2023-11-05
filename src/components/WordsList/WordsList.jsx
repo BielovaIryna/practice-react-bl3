@@ -2,7 +2,7 @@ import WordsListItem from 'components/WordsListItem/WordsListItem';
 import React from 'react';
 import css from './WordsList.module.css';
 
-export default function WordsList({ words, handleDelete }) {
+export default function WordsList({ words, numberComponent, handleDelete }) {
   // const newHandleDelete = id => () => handleDelete(id);
   return (
     <div>
@@ -19,11 +19,12 @@ export default function WordsList({ words, handleDelete }) {
             </tr>
           </thead>
           <tbody>
-            {words.map(word => {
+            {words.map((word, index) => {
               return (
                 <WordsListItem
                   key={word.id}
                   word={word}
+                  number={numberComponent + index + 1}
                   handleDelete={() => handleDelete(word.id)}
                 />
               );

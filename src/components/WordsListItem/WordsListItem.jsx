@@ -9,7 +9,7 @@ export default class WordsListItem extends Component {
         <td>
           <input type="checkbox" name="selectAll" />
         </td>
-        <td>#{}</td>
+        <td>#{this.props.number}</td>
         <td>{enWord}</td>
         <td>{ukWord}</td>
         <td>

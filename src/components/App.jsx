@@ -6,7 +6,6 @@ export class App extends Component {
   state = {
     words: [],
     filter: '',
-    numberComponent: 0,
   };
   handleAddWord = newWord => {
     this.setState(prevState => {
@@ -19,12 +18,6 @@ export class App extends Component {
   handleDelete = wordId => {
     this.setState(prevState => ({
       words: prevState.words.filter(word => word.id !== wordId),
-    }));
-  };
-
-  increaseNumberComponent = () => {
-    this.setState(prevState => ({
-      numberComponent: prevState.numberComponent + 1,
     }));
   };
 
@@ -47,10 +40,7 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <WordsForm
-          handleAddWord={this.handleAddWord}
-          increaseNumberComponent={this.increaseNumberComponent}
-        />
+        <WordsForm handleAddWord={this.handleAddWord} />
         <WordsFilter
           filter={this.state.filter}
           handleInputChange={this.handleInputChange}

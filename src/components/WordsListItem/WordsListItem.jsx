@@ -3,19 +3,20 @@ import css from './WordsListItem.module.css';
 export default class WordsListItem extends Component {
   render() {
     const { ukWord, enWord } = this.props.word;
+    const { numberOfItem, handleDelete } = this.props;
 
     return (
       <tr>
         <td>
           <input type="checkbox" name="selectAll" />
         </td>
-        <td>#{this.props.number}</td>
+        <td>{numberOfItem}</td>
         <td>{enWord}</td>
         <td>{ukWord}</td>
         <td>
           <button
             type="button"
-            onClick={this.props.handleDelete}
+            onClick={handleDelete}
             className={css.btnActions}
           >
             Delete

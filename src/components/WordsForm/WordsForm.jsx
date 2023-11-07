@@ -11,7 +11,6 @@ export default class WordsForm extends Component {
     e.preventDefault();
     const newWord = { ...this.state, id: nanoid(5) };
     this.props.handleAddWord(newWord);
-    this.props.increaseNumberComponent();
   };
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });

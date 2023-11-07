@@ -24,7 +24,7 @@ export default function WordsList({ words, numberComponent, handleDelete }) {
                 <WordsListItem
                   key={word.id}
                   word={word}
-                  number={numberComponent + index + 1}
+                  numberOfItem={index + 1}
                   handleDelete={() => handleDelete(word.id)}
                 />
               );
